@@ -2,10 +2,30 @@
 # Commandes à lancer
 sudo raspi-config
 sudo apt-get remove --purge  wolfram-engine minecraft-pi sonic-pi libreoffice* && sudo apt-get clean && sudo apt-get autoremove
-sudo aptitude update -y && sudo aptitude upgrade -y && sudo apt-get clean && sudo apt-get autoremove
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get clean && sudo apt-get autoremove
+sudo apt-get install rpi-update
+sudo rpi-update
+
+## Migration Jessie => Stretch
+sudo apt-get dist-upgrade
+sudo sed -i 's/jessie/stretch/g' /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get --simulate upgrade
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
 
 ## h264 encoding
 https://www.reddit.com/r/raspberry_pi/comments/5677qw/hardware_accelerated_x264_encoding_with_ffmpeg/
 sudo apt-get update
-sudo apt-get install autoconf automake build-essential libass-dev libfreetype6-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev
+sudo apt-get install autoconf automake build-essential libass-dev libfreetype6-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo zlib1g-dev libomxil-bellagio-dev git
 
+git clone https://github.com/ffmpeg/FFMpeg --depth 1
+
+cd ~/FFMpeg
+./configure --enable-gpl --enable-nonfree --enable-mmal --enable-omx --enable-omx-rpi
+make -j4 
+
+./ffmpeg -encoders | grep h264_omx
+make install
+
+./ffmpeg -c:v h264_mmal -i <inputfile.mp4> -c:v h264_omx -c:a copy -b:v 1500k <outputfile.mp4>
