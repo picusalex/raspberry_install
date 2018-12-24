@@ -34,3 +34,5 @@ make -j4
 make install
 
 ./ffmpeg -c:v h264_mmal -i <inputfile.mp4> -c:v h264_omx -c:a copy -b:v 1500k <outputfile.mp4>
+ffmpeg-4.1/ffmpeg -y -i "" -c:v h264_omx -c:a copy -b:v 500k /tmp/text.mp4 -vf scale=-1:720
+
