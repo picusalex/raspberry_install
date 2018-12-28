@@ -52,4 +52,8 @@ git clone https://github.com/picusalex/sibus.picamera.git
 cd sibus.camera
 sudo ./install.sh
 
-
+## Install SqueezeBox
+# See http://opendomotech.com/multiroom-raspberry-pi-lms-et-android/
+sudo apt-get install squeezelite libflac-dev
+sudo nano /etc/default/squeezelite
+ ==> SB_EXTRA_ARGS=”-a 180″
