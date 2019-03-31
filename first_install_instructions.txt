@@ -57,3 +57,12 @@ sudo ./install.sh
 sudo apt-get install squeezelite libflac-dev
 sudo nano /etc/default/squeezelite
  ==> SB_EXTRA_ARGS=”-a 180″
+
+
+## INstall qmi manager
+https://github.com/autopi-io/autopi-core/blob/84dc44aa0aff28f8c6644d395b523a597dcea933/src/salt/base/state/network/wwan/qmi/qmi-manager.sh
+https://github.com/autopi-io/autopi-core/blob/84dc44aa0aff28f8c6644d395b523a597dcea933/src/salt/base/state/network/wwan/qmi/qmi-manager.conf.jinja
+
+https://packages.debian.org/sid/armhf/libqmi-utils/download
+
+
