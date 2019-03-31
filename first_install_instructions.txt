@@ -64,5 +64,13 @@ https://github.com/autopi-io/autopi-core/blob/84dc44aa0aff28f8c6644d395b523a597d
 https://github.com/autopi-io/autopi-core/blob/84dc44aa0aff28f8c6644d395b523a597dcea933/src/salt/base/state/network/wwan/qmi/qmi-manager.conf.jinja
 
 https://packages.debian.org/sid/armhf/libqmi-utils/download
+https://raw.githubusercontent.com/autopi-io/autopi-core/0699c7af7b942e4d287555d9eb79b90440893cb0/src/salt/base/state/network/wwan/qmi/udhcpc.script ==> /etc/udhcpc/qmi.script
+
+
+## Access point
+https://www.raspberrypi.org/forums/viewtopic.php?t=191453
+https://sixfab.com/using-3g-or-4g-raspberry-pi-shield-as-a-wifi-access-point/
+
+
 
 
