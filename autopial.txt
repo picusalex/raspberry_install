@@ -1,0 +1,16 @@
+Installation instruction for autopial
+
+############### LTE modem EC25 ##################################
+Base:
+https://sixfab.com/qmi-interface-with-3g-4g-lte-base-shield-v2/
+==> 03/04/2019, follow instructions without issue: ping 8.8.8.8 OK
+
+
+############# Hostapd ##############################
+https://raspbian-france.fr/creer-un-hotspot-wi-fi-en-moins-de-10-minutes-avec-la-raspberry-pi/
+==> 03/04/2019, follow instructions without issue: hotspot activated with internet
+
+
+############ Supervisord ##########################
+sudo apt install supervisor
+
